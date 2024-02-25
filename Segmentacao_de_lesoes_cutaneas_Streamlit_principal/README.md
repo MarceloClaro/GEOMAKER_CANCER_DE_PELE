@@ -1,5 +1,5 @@
 # 🧠Segmentação de lesões cutâneas Streamlit🧠
-![Impressionante](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
+![GEOMAKER](https://github.com/MarceloClaro/GEOMAKER_CANCER_DE_PELE/assets/58664974/809ea2b2-07e1-4815-b9cd-9b2b1f147421)
 > Um aplicativo da web feito com Streamlit para a segmentação de lesões desenvolvido como parte de um projeto de ensino básico dos alunos de ensino médio do 1º e 2º ano do Cólegio CVC - Nova Russas - CE.
 
 ![Demonstração](https://media.giphy.com/media/tSAqqpRU32BX1TwC61/giphy.gif)
