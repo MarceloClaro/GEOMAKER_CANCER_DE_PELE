@@ -39,34 +39,34 @@ model = load()
 
 
 ##############
-# Side Bar   #
+# Barra Lateral   #
 ##############
-with st.sidebar.header('Upload your Skin Image'):
-    upload_file = st.sidebar.file_uploader('Choose your Skin Image', type=['jpg', 'jpeg', 'png'])
+with st.sidebar.header('Faça o upload da sua imagem de pele'):
+    upload_file = st.sidebar.file_uploader('Escolha sua imagem de pele', type=['jpg', 'jpeg', 'png'])
 
 
 ##############
-# Page Title #
+# Título da Página #
 ##############
-st.write('# 🧠Skin Lesion Segmentation🧠')
-st.write('This Website was created by Crinex. The code for the Website and Segmentation is in the Github. If you want to use this Code, please Fork and use it.🤩🤩')
-st.write('📕 Github:https://github.com/crinex/Skin-Lesion-Segmentation-Streamlit 📕')
+st.write('# 🧠Segmentação de Lesões na Pele🧠')
+st.write('Este site foi criado por Crinex. O código do site e da segmentação está no Github. Se você quiser usar este código, por favor faça um Fork e use-o.🤩🤩')
+st.write('📕 Github: https://github.com/crinex/Skin-Lesion-Segmentation-Streamlit 📕')
 
 
 ###############
-# Main Screen #
+# Tela Principal #
 ###############
 col1, col2, col3 = st.beta_columns(3)
 with col1:
-    st.write('### Original Image')
+    st.write('### Imagem Original')
     img = imread(upload_file)
     img = resize(img, (256, 256))
     preview_img = resize(img, (256, 256))
     st.image(preview_img)
 
-col2.write('### Button')
-clicked = col2.button('Segment!!')
-clicked2 = col2.button('Predict Image')
+col2.write('### Botão')
+clicked = col2.button('Segmentar!!')
+clicked2 = col2.button('Prever Imagem')
 
 if clicked:
     x = img
@@ -75,7 +75,7 @@ if clicked:
     x = np.reshape(x, (256, 256, 3))
     #x = resize(x, (256, 256, 3))
     #pred = model.predict(x).squeeze()
-    col3.write('### Segmentation Image')
+    col3.write('### Imagem Segmentada')
     mask_img = applyMask(x)
     col3.image(mask_img)
 
@@ -85,5 +85,5 @@ if clicked2:
     x = np.reshape(x, (256, 256, 3))
     #x = resize(x, (256, 256, 1))
     enhance_img = enhance(x).reshape(256, 256)
-    col3.write('### Prediction Image')
+    col3.write('### Imagem de Predição')
     col3.image(enhance_img)
