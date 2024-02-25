@@ -33,10 +33,15 @@ def applyMask(img):
 # Model Load #
 ##############
 @st.cache
-def load():
-    return load_model('ResU_net.h5')
-model = load()
+def load_model_from_upload(uploaded_model):
+    if uploaded_model is not None:
+        return load_model(uploaded_model)
+    else:
+        return load_model('ResU_net.h5')
 
+model_upload = st.sidebar.file_uploader("Faça upload do modelo .h5", type=['h5'])
+
+model = load_model_from_upload(model_upload)
 
 ##############
 # Barra Lateral   #
